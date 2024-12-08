@@ -14,7 +14,10 @@
 use App\Http\Controllers\QRCodeController;
 // use Illuminate\Routing\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', [QRCodeController::class, 'index']);
+Route::get('/create', [QRCodeController::class, 'create']);
 Route::post('/scan', [QRCodeController::class, 'scan']);
+Route::post('/save', [QRCodeController::class, 'save']);
